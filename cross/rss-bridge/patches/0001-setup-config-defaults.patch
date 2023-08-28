@@ -1,0 +1,11 @@
+--- config.default.ini.php.1	2023-07-13 17:23:12.000000000 +0200
++++ config.default.ini.php	2023-08-29 14:28:29.436003672 +0200
+@@ -128,7 +128,7 @@ report_limit = 1
+ [FileCache]
+ ; The root folder to store files in.
+ ; "" = Use the cache folder in the repository (default)
+-path = ""
++path = "/var/packages/rss-bridge/tmp/"
+ ; Whether to actually delete files when purging. Can be useful to turn off to increase performance.
+ enable_purge = true
+ 

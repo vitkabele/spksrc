@@ -1,0 +1,42 @@
+{
+  "webservice": {
+    "services": [
+      {
+        "service": "rss-bridge",
+        "display_name": "RSS Bridge",
+        "type": "nginx_php",
+        "root": "rss-bridge",
+        "icon": "app/images/rss-bridge-{0}.png",
+        "php": {
+          "profile_name": "RSS Bridge Profile",
+          "profile_desc": "PHP Profile for rss-bridge",
+          "backend": 8,
+          "extensions": [
+              "curl",
+              "openssl"
+          ],
+          "user": "sc-rss-bridge",
+          "group": "http"
+        }
+      }
+    ],
+    "portals": [
+      {
+        "service": "rss-bridge",
+        "type": "alias",
+        "name": "RSS Bridge",
+        "alias": "rss-bridge",
+        "app": "com.synocommunity.packages.rss-bridge"
+      }
+    ],
+    "pkg_dir_prepare": [
+      {
+        "source": "/var/packages/rss-bridge/target/web",
+        "target": "rss-bridge",
+        "mode": "0755",
+        "user": "sc-rss-bridge",
+        "group": "http"
+      }
+    ]
+  }
+}

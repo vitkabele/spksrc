@@ -1,0 +1,14 @@
+--- lib/RssBridge.php.1	2023-08-30 10:18:20.225184121 +0200
++++ lib/RssBridge.php	2023-08-30 10:19:51.090828774 +0200
+@@ -27,8 +27,9 @@ final class RssBridge
+         Configuration::verifyInstallation();
+ 
+         $customConfig = [];
+-        if (file_exists(__DIR__ . '/../config.ini.php')) {
+-            $customConfig = parse_ini_file(__DIR__ . '/../config.ini.php', true, INI_SCANNER_TYPED);
++	$configFile = '/var/packages/rss-bridge/var/config.ini.php';
++        if (file_exists($configFile)) {
++            $customConfig = parse_ini_file($configFile, true, INI_SCANNER_TYPED);
+         }
+         Configuration::loadConfiguration($customConfig, getenv());
+ 
